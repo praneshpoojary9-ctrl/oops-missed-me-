@@ -16,20 +16,19 @@ let msgIndex = 0;
 let yesScale = 1;
 
 noBtn.addEventListener("mouseenter", () => {
-  // Move NO randomly
   const x = Math.random() * 220;
   const y = Math.random() * 60;
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
 
-  // Show popup message
+ 
   popup.textContent = messages[msgIndex % messages.length];
   popup.classList.remove("show");
   void popup.offsetWidth; // restart animation
   popup.classList.add("show");
   msgIndex++;
 
-  // Make YES bigger
+ 
   yesScale += 0.15;
   yesBtn.style.transform = `scale(${yesScale})`;
 });
